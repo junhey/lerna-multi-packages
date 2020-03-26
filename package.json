@@ -1,0 +1,23 @@
+{
+  "name": "lerna-multi",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+		"bootstrap:common": "lerna bootstrap --scope=common",
+		"bootstrap:egg-service": "lerna bootstrap --scope={common,egg-service}",
+		"bootstrap:umi-front": "lerna bootstrap --scope={common,umi-front}",
+		"tsc:common": "lerna run tsc --scope=common",
+		"build:egg-service": "lerna run build --scope=egg-service",
+		"build:umi-front": "lerna run build --scope=umi-front",
+		"clean": "lerna clean",
+		"start:egg-service": "cd ./packages/egg-service && npm run start",
+		"start:prod:egg-service": "cd ./packages/egg-service && npm run start:prod",
+		"dev:egg-service": "cd ./packages/egg-service && npm run dev",
+		"start:umi-front": "cd ./packages/umi-front && npm run start",
+		"start:prod:umi-front": "cd ./packages/umi-front && npm run start:prod",
+		"dev:umi-front": "cd ./packages/umi-front && npm run dev"
+  },
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}
